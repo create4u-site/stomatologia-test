@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  SmilePro — index.html
+  Security headers (add to your web server / .htaccess):
+    Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https://images.unsplash.com data:; font-src 'self' https://cdnjs.cloudflare.com;
+    X-Frame-Options: DENY
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: geolocation=(), microphone=(), camera=()
+  ============================================================
+-->
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ✅ Security Meta Tags -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="X-Frame-Options" content="DENY"/>
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()"/>
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 script-src 'self' https://cdnjs.cloudflare.com;
+                 style-src 'self' https://cdnjs.cloudflare.com;
+                 img-src 'self' https://images.unsplash.com data:;
+                 font-src 'self' https://cdnjs.cloudflare.com;
+                 connect-src 'self';
+                 frame-ancestors 'none';"/>
+
+  <!-- SEO -->
+  <title>SmilePro — Стоматология в Минске | Лечение без боли</title>
+  <meta name="description" content="Современная стоматология в центре Минска. Имплантация, виниры, брекеты, лечение под микроскопом. Первичный осмотр бесплатно. Рассрочка до 24 месяцев."/>
+  <meta name="robots" content="index, follow"/>
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="loading">
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav>
+  <a href="#" class="logo no-select"><i class="fa-solid fa-tooth"></i> SmilePro</a>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#why">О нас</a></li>
+    <li><a href="#doctors">Врачи</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Записаться</button>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge no-select"><i class="fa-solid fa-star"></i> Лучшая стоматология Минска 2024</div>
+    <h1>Здоровая улыбка — <span>ваша уверенность</span> каждый день</h1>
+    <p>Современная стоматология полного цикла в центре Минска. Лечим без боли, работаем на немецком оборудовании. Первичный осмотр — бесплатно.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openModal()">
+        <i class="fa-solid fa-calendar-check"></i> Записаться бесплатно
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+        <i class="fa-solid fa-list"></i> Наши услуги
+      </button>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=85"
+         alt="Стоматолог SmilePro" loading="lazy" draggable="false"/>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+============================================================ -->
+<div class="stats">
+  <div class="stats-inner no-select">
+    <div class="stat-item"><div class="stat-num">12+</div><div class="stat-label">лет работы<br>в Минске</div></div>
+    <div class="stat-item"><div class="stat-num">15 000+</div><div class="stat-label">довольных<br>пациентов</div></div>
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">опытных<br>врачей</div></div>
+    <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">рекомендуют<br>нас друзьям</div></div>
+    <div class="stat-item"><div class="stat-num">0 руб.</div><div class="stat-label">первичный<br>осмотр</div></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section class="services" id="services">
+  <div class="center">
+    <span class="section-tag">Наши услуги</span>
+    <h2 class="section-title">Всё для вашей улыбки<br>в одной клинике</h2>
+    <p class="section-sub">Современные технологии и опытные специалисты для решения любых стоматологических задач</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <img class="service-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80"
+           alt="Имплантация" loading="lazy" draggable="false"/>
+      <div class="service-body">
+        <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
+        <h3>Имплантация и протезирование</h3>
+        <p>Восстановление зубов за 1 день. Импланты Nobel Biocare и Straumann с гарантией 10 лет.</p>
+        <a href="#contact" class="service-link">Узнать цену →</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <img class="service-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80"
+           alt="Брекеты" loading="lazy" draggable="false"/>
+      <div class="service-body">
+        <div class="service-icon"><i class="fa-solid fa-smile"></i></div>
+        <h3>Исправление прикуса</h3>
+        <p>Элайнеры Invisalign и керамические брекеты. Незаметное лечение без дискомфорта.</p>
+        <a href="#contact" class="service-link">Узнать цену →</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <img class="service-img" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80"
+           alt="Виниры" loading="lazy" draggable="false"/>
+      <div class="service-body">
+        <div class="service-icon"><i class="fa-solid fa-star"></i></div>
+        <h3>Эстетическая стоматология</h3>
+        <p>Виниры, люминиры и профессиональное отбеливание ZOOM. Голливудская улыбка за 2 визита.</p>
+        <a href="#contact" class="service-link">Узнать цену →</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <img class="service-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80"
+           alt="Лечение под микроскопом" loading="lazy" draggable="false"/>
+      <div class="service-body">
+        <div class="service-icon"><i class="fa-solid fa-microscope"></i></div>
+        <h3>Лечение под микроскопом</h3>
+        <p>Точная диагностика и лечение каналов под увеличением. Сохраняем даже сложные зубы.</p>
+        <a href="#contact" class="service-link">Узнать цену →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY US
+============================================================ -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-img-wrap">
+      <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&q=85"
+           alt="Клиника SmilePro" loading="lazy" draggable="false"/>
+      <div class="why-badge no-select"><span>⭐ 4.9</span>Рейтинг на Google</div>
+    </div>
+    <div>
+      <span class="section-tag">Почему мы?</span>
+      <h2 class="section-title">Мы закрываем все ваши страхи</h2>
+      <p class="section-sub" style="margin-bottom:32px">Понимаем, что поход к стоматологу — это стресс. Поэтому создали клинику, где комфортно и безопасно.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-syringe"></i></div>
+          <div><h4>Лечение без боли</h4><p>Современная анестезия Septanest действует за 2 минуты. Вы не почувствуете ничего лишнего.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-x-ray"></i></div>
+          <div><h4>3D-томограф в клинике</h4><p>Собственный КТ-аппарат Planmeca для точной диагностики без направлений в другие центры.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <div><h4>Честная фиксированная цена</h4><p>Стоимость лечения прописывается в договоре и не меняется в процессе. Никаких сюрпризов.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <div><h4>Рассрочка без переплат</h4><p>Оплата частями через карты «Халва» и «Черепаха». До 24 месяцев без процентов.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DOCTORS
+============================================================ -->
+<section class="doctors" id="doctors">
+  <div class="center">
+    <span class="section-tag">Наша команда</span>
+    <h2 class="section-title">Врачи, которым доверяют</h2>
+    <p class="section-sub">Каждый специалист — с опытом от 10 лет и постоянным повышением квалификации в Европе</p>
+  </div>
+  <div class="doctors-grid">
+    <div class="doctor-card">
+      <img class="doctor-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80"
+           alt="Анна Ковалёва" loading="lazy" draggable="false"/>
+      <div class="doctor-body">
+        <h3>Анна Ковалёва</h3>
+        <div class="doctor-spec">Главный врач, имплантолог</div>
+        <div class="doctor-exp"><i class="fa-solid fa-briefcase-medical"></i> Стаж 16 лет</div>
+        <div class="doctor-quote">«Моя цель — сохранить ваш зуб даже в самом сложном случае»</div>
+      </div>
+    </div>
+    <div class="doctor-card">
+      <img class="doctor-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80"
+           alt="Дмитрий Соколов" loading="lazy" draggable="false"/>
+      <div class="doctor-body">
+        <h3>Дмитрий Соколов</h3>
+        <div class="doctor-spec">Ортодонт</div>
+        <div class="doctor-exp"><i class="fa-solid fa-briefcase-medical"></i> Стаж 12 лет</div>
+        <div class="doctor-quote">«Красивый прикус — это не только эстетика, но и здоровье»</div>
+      </div>
+    </div>
+    <div class="doctor-card">
+      <img class="doctor-img" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80"
+           alt="Мария Петрова" loading="lazy" draggable="false"/>
+      <div class="doctor-body">
+        <h3>Мария Петрова</h3>
+        <div class="doctor-spec">Эстетическая стоматология</div>
+        <div class="doctor-exp"><i class="fa-solid fa-briefcase-medical"></i> Стаж 11 лет</div>
+        <div class="doctor-quote">«Создаю улыбки, которые меняют жизнь к лучшему»</div>
+      </div>
+    </div>
+    <div class="doctor-card">
+      <img class="doctor-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80"
+           alt="Игорь Новиков" loading="lazy" draggable="false"/>
+      <div class="doctor-body">
+        <h3>Игорь Новиков</h3>
+        <div class="doctor-spec">Хирург-пародонтолог</div>
+        <div class="doctor-exp"><i class="fa-solid fa-briefcase-medical"></i> Стаж 14 лет</div>
+        <div class="doctor-quote">«Здоровые дёсны — основа красивой улыбки»</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BEFORE / AFTER
+============================================================ -->
+<section class="beforeafter" id="cases">
+  <div class="center">
+    <span class="section-tag">Наши работы</span>
+    <h2 class="section-title">Результаты говорят сами за себя</h2>
+    <p class="section-sub">Реальные случаи из нашей практики — до и после лечения</p>
+  </div>
+  <div class="ba-slider-wrap">
+    <div class="ba-slides">
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=300&q=75" alt="До" loading="lazy" draggable="false"/><span class="ba-label">До</span></div>
+          <div><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=300&q=75" alt="После" loading="lazy" draggable="false"/><span class="ba-label">После</span></div>
+        </div>
+        <div class="ba-body">
+          <h4>Виниры E.max — 10 зубов</h4>
+          <p>Пациентка 34 года. Изменение цвета и формы зубов. Результат за 2 визита.</p>
+          <div class="ba-meta"><span>⏱ 2 недели</span><span>✅ Гарантия 5 лет</span></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&q=75" alt="До" loading="lazy" draggable="false"/><span class="ba-label">До</span></div>
+          <div><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=300&q=75" alt="После" loading="lazy" draggable="false"/><span class="ba-label">После</span></div>
+        </div>
+        <div class="ba-body">
+          <h4>Имплантация — 3 зуба</h4>
+          <p>Пациент 45 лет. Восстановление отсутствующих зубов. Импланты Nobel Biocare.</p>
+          <div class="ba-meta"><span>⏱ 3 месяца</span><span>✅ Гарантия 10 лет</span></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=300&q=75" alt="До" loading="lazy" draggable="false"/><span class="ba-label">До</span></div>
+          <div><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=300&q=75" alt="После" loading="lazy" draggable="false"/><span class="ba-label">После</span></div>
+        </div>
+        <div class="ba-body">
+          <h4>Брекеты — исправление прикуса</h4>
+          <p>Пациентка 22 года. Скученность зубов и открытый прикус. Керамические брекеты.</p>
+          <div class="ba-meta"><span>⏱ 18 месяцев</span><span>✅ Ретейнеры в подарок</span></div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=300&q=75" alt="До" loading="lazy" draggable="false"/><span class="ba-label">До</span></div>
+          <div><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=300&q=75" alt="После" loading="lazy" draggable="false"/><span class="ba-label">После</span></div>
+        </div>
+        <div class="ba-body">
+          <h4>Отбеливание ZOOM 4</h4>
+          <p>Пациент 29 лет. Потемнение эмали от кофе. Осветление на 8 тонов за 1 час.</p>
+          <div class="ba-meta"><span>⏱ 1 час</span><span>✅ Эффект 2–3 года</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REVIEWS
+============================================================ -->
+<section class="reviews" id="reviews">
+  <div class="center">
+    <span class="section-tag">Отзывы</span>
+    <h2 class="section-title">Нам доверяют тысячи минчан</h2>
+    <p class="section-sub">Реальные отзывы наших пациентов с Google Maps и 103.by</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Наконец-то нашла стоматологию, где не страшно! Анна Сергеевна — просто волшебник. Поставила имплант, я почти ничего не почувствовала. Теперь вся семья ходит только сюда.»</p>
+      <div class="review-author">
+        <img class="review-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Елена" loading="lazy" draggable="false"/>
+        <div>
+          <div class="review-name">Елена Морозова</div>
+          <div class="review-date">Октябрь 2024</div>
+          <div class="review-source">Google Maps ✓</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Делал виниры — результат превзошёл все ожидания. Цена честная, всё прописали в договоре заранее. Никаких скрытых доплат. Рекомендую всем коллегам!»</p>
+      <div class="review-author">
+        <img class="review-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Андрей" loading="lazy" draggable="false"/>
+        <div>
+          <div class="review-name">Андрей Климов</div>
+          <div class="review-date">Сентябрь 2024</div>
+          <div class="review-source">103.by ✓</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Привела ребёнка 8 лет — боялась, что будет плакать. Врач нашла подход, всё прошло спокойно. Теперь сын сам просится на осмотр. Спасибо огромное команде!»</p>
+      <div class="review-author">
+        <img class="review-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Ольга" loading="lazy" draggable="false"/>
+        <div>
+          <div class="review-name">Ольга Захарова</div>
+          <div class="review-date">Ноябрь 2024</div>
+          <div class="review-source">Google Maps ✓</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA FORM
+============================================================ -->
+<section class="cta-section" id="contact">
+  <div class="cta-box">
+    <div>
+      <span class="section-tag">Запись онлайн</span>
+      <h2>Запишитесь на бесплатную консультацию</h2>
+      <p>Наш администратор свяжется с вами в течение 15 минут и подберёт удобное время.</p>
+      <div class="cta-perks">
+        <div class="cta-perk"><i class="fa-solid fa-check-circle"></i> Первичный осмотр и план лечения — бесплатно</div>
+        <div class="cta-perk"><i class="fa-solid fa-check-circle"></i> Скидка 15% на первое лечение</div>
+        <div class="cta-perk"><i class="fa-solid fa-check-circle"></i> Работаем без выходных с 9:00 до 21:00</div>
+        <div class="cta-perk"><i class="fa-solid fa-check-circle"></i> Рассрочка до 24 месяцев без %</div>
+      </div>
+    </div>
+    <div>
+      <div id="contactForm">
+        <!-- ✅ Honeypot anti-spam field (hidden from users, visible to bots) -->
+        <div class="hp-field" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off"/>
+        </div>
+        <div class="form-group">
+          <label for="cName">Ваше имя</label>
+          <input id="cName" type="text" placeholder="Иван Иванов" autocomplete="name" maxlength="60"/>
+        </div>
+        <div class="form-group">
+          <label for="cPhone">Номер телефона</label>
+          <input id="cPhone" type="tel" placeholder="+375 (29) 000-00-00" autocomplete="tel" maxlength="20"/>
+        </div>
+        <div class="form-group">
+          <label for="cService">Интересующая услуга</label>
+          <select id="cService">
+            <option>Первичная консультация</option>
+            <option>Имплантация</option>
+            <option>Виниры / Эстетика</option>
+            <option>Брекеты / Элайнеры</option>
+            <option>Лечение зубов</option>
+            <option>Отбеливание</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="submitForm('contactForm')">
+          <i class="fa-solid fa-paper-plane"></i> Записаться бесплатно
+        </button>
+        <p class="rate-limit-msg"></p>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+      </div>
+      <div class="success-msg" id="successContact">
+        <i class="fa-solid fa-circle-check"></i>
+        <h4>Заявка принята!</h4>
+        <p>Мы позвоним вам в течение 15 минут. Спасибо!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo no-select"><i class="fa-solid fa-tooth"></i> SmilePro</div>
+      <p class="footer-desc">Современная стоматология полного цикла в центре Минска. Работаем с 2012 года. Лицензия МЗ РБ №12345.</p>
+      <div class="footer-socials">
+        <a href="#" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" rel="noopener noreferrer" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+        <a href="#" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" rel="noopener noreferrer" aria-label="Viber"><i class="fab fa-viber"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Услуги</h4>
+      <ul>
+        <li><a href="#">Имплантация</a></li>
+        <li><a href="#">Виниры</a></li>
+        <li><a href="#">Брекеты</a></li>
+        <li><a href="#">Отбеливание</a></li>
+        <li><a href="#">Лечение каналов</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Клиника</h4>
+      <ul>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Врачи</a></li>
+        <li><a href="#">Цены</a></li>
+        <li><a href="#">Акции</a></li>
+        <li><a href="#">Отзывы</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <div class="footer-contact">
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>ул. Немига, 5, Минск (м. Немига)</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+375 (22) 123-45-67</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Пн–Вс: 9:00 – 21:00</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@smilepro.by</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 SmilePro. Все права защищены.</span>
+    <span>Лицензия МЗ РБ № 12345 от 01.01.2012</span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING MESSENGER BUTTONS
+============================================================ -->
+<div class="float-btns">
+  <a href="viber://chat?number=375221234567" class="float-btn float-viber"
+     title="Viber" rel="noopener noreferrer"><i class="fab fa-viber"></i></a>
+  <a href="https://t.me/smilepro_minsk" class="float-btn float-tg"
+     title="Telegram" rel="noopener noreferrer" target="_blank"><i class="fab fa-telegram"></i></a>
+  <a href="https://wa.me/375221234567" class="float-btn float-wa"
+     title="WhatsApp" rel="noopener noreferrer" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<!-- ============================================================
+     MODAL
+============================================================ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Закрыть">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div id="modalForm">
+      <h3 id="modalTitle">Записаться на приём</h3>
+      <p>Оставьте контакты — перезвоним за 15 минут</p>
+      <!-- ✅ Honeypot -->
+      <div class="hp-field" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off"/>
+      </div>
+      <div class="form-group">
+        <label for="mName">Ваше имя</label>
+        <input id="mName" type="text" placeholder="Иван Иванов" autocomplete="name" maxlength="60"/>
+      </div>
+      <div class="form-group">
+        <label for="mPhone">Телефон</label>
+        <input id="mPhone" type="tel" placeholder="+375 (29) 000-00-00" autocomplete="tel" maxlength="20"/>
+      </div>
+      <div class="form-group">
+        <label for="mService">Услуга</label>
+        <select id="mService">
+          <option>Первичная консультация</option>
+          <option>Имплантация</option>
+          <option>Виниры / Эстетика</option>
+          <option>Брекеты / Элайнеры</option>
+          <option>Лечение зубов</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="submitForm('modalForm')">
+        <i class="fa-solid fa-paper-plane"></i> Отправить заявку
+      </button>
+      <p class="rate-limit-msg"></p>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+    </div>
+    <div class="success-msg" id="successModal">
+      <i class="fa-solid fa-circle-check"></i>
+      <h4>Заявка принята!</h4>
+      <p>Мы позвоним вам в течение 15 минут. Спасибо!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Script loaded last for performance & security -->
+<script src="script.js"></script>
+</body>
+</html>
